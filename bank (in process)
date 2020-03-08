@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
+class bank {
+        char name[50];
+            int password1;
+            int id;
+            int a;
+            int deposit = 0;
+            int withdra;
+
+        public:
+            void start();	
+	        void sing_in();	
+	        void create();	
+	        void menu();	
+	        void draw();	
+            void deposite();	
+	        void withdraw();	
+	        void balance();	
+	        void all();	
+	        void modify();	
+};
+
+    void bank::start(){
+//START MENU
+        cout << "\n\n\n\t Welcome to our bank" <<endl;
+        cout << "Select:" << endl;
+        cout << "1. Sing in" << endl;
+        cout << "2. Create account" << endl;
+        cin >> a; 
+        if (a == 1) {
+            return sing_in();
+        }
+        else {
+            return create ();
+        }
+    }
+//SING IN
+        void bank::sing_in () {
+        cout << "Enter your name: ";
+        cin >>name;
+        cout << "Enter your bank number:";
+        cin >> num;
+        cout << "Enter your password :";
+        cin >> password1;
+        return menu ();
+        }
+// CREATE ACC
+        void bank::create() { 
+        cout << "\n\t Thanks  you, lets create your account" << endl;
+        cout << "Please enter your name: ";
+        cin >> name;
+        cout << "Create your password: ";
+        cin >> password1; 
+        cout << "Create your bank id: ";
+        cin >> id;
+        cout << "Success, loading....";
+
+        return menu();
+        }
+
+        void bank::menu (){
+        int option;
+        cout<<"\n\n\n\tMAIN MENU";   // главное меню
+        cout<<"\n\n\nWelcom"<<" " << name <<endl;
+		cout<<"\n\n\t01. New account"; // новый акк
+		cout<<"\n\n\t02. DEPOSIT AMOUNT"; // положить 
+		cout<<"\n\n\t03. WITHDRAW AMOUNT"; // снять
+		cout<<"\n\n\t04. BALANCE ENQUIRY"; // проверить баланс 
+		cout<<"\n\n\t05. ALL ACCOUNT HOLDER LIST"; // все акки 
+		cout<<"\n\n\t06. MODIFY AN ACCOUNT"; // выход
+		cout<<"\n\n\t07. Exit";
+		cout<<"\n\n\tSelect Your Option (1-7) ";
+        cin >> option;
+        // for new accout 
+        if (option == 1 ) {
+            return create ();
+        }
+        //deposite
+        else if (option == 2 ) {
+            return deposite();
+            }
+        // withdraw   
+        else if (option == 3 ) {
+            return withdraw ();
+            }
+        //balance
+        else if (option == 4 ) {
+            return balance ();
+         }
+         
+        //list all account 
+        else if (option == 5 ) {
+            return all ();
+        }
+        //modify 
+        else if (option == 6 ) {
+            return create ();
+        }
+        //exit 
+        else if (option == 7) {
+            return start (); 
+            }
+    }
+//DEPOSITE   
+    void bank:: deposite (){
+    int deposite;
+    cout << "\n\n\n\n\t PARADISE"<<endl;
+    cout << "\n\t01. Deposite" << endl;
+    cout << "\n\t02. Exit"<< endl;
+    cout << "Chose 1 or 2..."<< endl;
+    cin >> deposite; 
+
+    if (deposite == 1) {
+        int sum1; 
+        cout << "Amout - ";
+        cin >> sum1;
+        return menu ();
+    }
+    else {
+    return menu();
+    }
+    
+    }
+//WITHDRAW  
+    void bank:: withdraw(){
+    cout << "\n\n\n\n\t PARADISE"<<endl;
+    cout << "\n\t01. Withdraw" << endl;
+    cout << "\n\t02. Exit"<< endl;
+    cout << "Chose 1 or 2..."<< endl;
+    cin >> withdra; 
+
+    if (withdra == 1) {
+        cout << "Amout - ";
+        cin >> sum2;
+        return menu ();
+    }
+    else {
+    return menu();
+    }
+}
+//CHECK BALANCE   
+    void bank:: balance(){
+    int balance_exit;
+    cout << "\n\n\n\n\t PARADISE"<<endl;
+    cout << name << ", your balance is = "<<endl;
+    cout << "Press 1 for exit: ";
+    cin >> balance_exit; 
+    while (balance_exit == 1 ) { 
+        return menu ();
+    }
+    }
+//ALL ACCAOUNTS 
+    void bank:: all() {
+        int all_exit;
+        cout << "\n\n\n\n\t PARADISE"<<endl;
+        cout << "Here will be all acc off course later =D"<<endl;
+        cout << "Press 1 for exit: ";
+        cin >> all_exit; 
+        while (all_exit == 1 ) { 
+        return menu ();
+    }
+ }
+ // MODIFY ACCOUNT   
+    void bank:: modify() {    
+    int mody;
+      cout << "\n\n\n\n\t PARADISE";
+      cout << "\n\t01. Change name" << endl;
+      cout << "\n\t02. Change number"<< endl;
+      cout << "\n\t03. Change password"<< endl;
+      cout << "\n\t04. Main menu"<< endl;
+      cout << "Chose function (0-4)..."<< endl;
+    cin >> mody;
+    if (mody == 1) { 
+          cout << "Write your new name ...";
+          cin >> name;
+          return modify();  
+      }
+    else if (mody == 2) {
+          cout << "Write your new id number ...";
+          cin >> id;
+          return modify();  
+      }
+    else if (mody == 3) {
+          cout << "Write your new password ...";
+          cin >> password1; 
+          return modify();    
+        }
+    else if (mody == 4) {
+          return  menu();   
+        }
+    }
+    //    	function declaration
+
+void write_account();	//function to write record in binary file
+void display_sp(int);	//function to display account details given by user
+void modify_account(int);	//function to modify record of file
+void delete_account(int);	//function to delete record of file
+void display_all();		//function to display all account details
+void deposit_withdraw(int, int); // function to desposit/withdraw amount for given account
+
+
+
+int main()
+{
+    bank a;
+    a.start();
+}
