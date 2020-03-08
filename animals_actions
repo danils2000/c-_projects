@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std; 
+
+class animal {
+    public: 
+    void speak () { 
+        cout << "Grrrrrrr" << endl; 
+    }
+};
+class cat: public animal {
+    public: 
+    void jump () { 
+        cout << "JUMPPPPP" << endl; 
+    }
+};
+class lion: public cat{
+    public: 
+    void attack  () { 
+        cout << "GRR EAT" << endl; 
+    }
+};
+
+int main()
+{
+    animal a;
+        a.speak ();
+cout<< "<><><><><><><>" << endl;
+    cat cat;
+        cat.jump ();
+        cat.speak();
+cout<< "<><><><><><><>" << endl;
+    lion lion;
+        lion.jump();
+        lion.attack();
+        lion.speak(); 
+    
+
+    return 0;
+}
