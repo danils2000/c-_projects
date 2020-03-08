@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    FILE *write_file;
+    
+    struct phone{
+        char firstphone[21];
+        char secondphone[30];
+    };
+    
+    
+    struct phone phone_list[50];
+     for(int i = 0; i < 1 ; i++) {  
+        printf("John Doe 041-3478924\n");
+		    printf("Brian Smith 040-3980982\n");
+		    printf("Brita Smith 05-4567393\n");
+        printf("Thomas Jefferson 05-6243370\n");
+}
+ if ((write_file = fopen("phonedir.txt", "r")) == NULL) {  
+          printf("Error opening file.");
+         return 0;
+ }
+ else{
+     for(int i=0; i < 1 ; i++) {
+     fprintf(write_file, "%s %s", phone_list[i].firstphone,
+     phone_list[i].secondphone); 
+    }
+ }
+    fclose(write_file);
+        return 0;
+}
