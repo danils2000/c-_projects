@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std; 
+
+class pox {
+    private:
+        int a ,b ,c;
+    
+    public:
+        void set (int a, int b , int c) { 
+             this -> a = a; 
+             this -> b = b; 
+             this -> c = c; 
+    }
+    
+    void get () { 
+        cout <<"A is " <<a <<", B is " << b << ", C is "<<c << endl;
+    }
+    void sum (){
+        cout <<"Sum is " << a + b + c;
+    }
+  };
+    
+    int main (){ 
+        pox test;
+        test.set (10, 1 , 23); 
+        test.get ();
+        test.sum();
+    
+    cin.get ();
+    return 0;
+}
