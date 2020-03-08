@@ -1,0 +1,46 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main () {
+
+list <int> numbers; 
+    
+    numbers.push_back(1);
+    numbers.push_back(2);
+    numbers.push_back(3);
+    numbers.push_back(4);
+    numbers.push_back(5);
+    numbers.push_back(6);
+    numbers.push_front(0); 
+ 
+    list<int>::iterator it = numbers.begin(); //first element 
+    numbers.insert(it, 0); 
+    cout << "Firts element is = " << *it << endl;
+
+// erase delete from container
+    list<int>:: iterator eraseIt = numbers.begin();
+    eraseIt++; 
+    eraseIt = numbers.erase (eraseIt); 
+
+    cout << "Elements is " << *eraseIt << endl; 
+
+    for (list<int>::iterator it = numbers.begin(); it != numbers.end(); it++){ // end last element 
+        if (*it == 2) {
+            numbers.insert (it , 12345); 
+        }
+        if (*it == 1) {
+            it = numbers.erase (it);
+        }
+        else  {
+            it++; 
+        }
+    }
+      for (list<int>::iterator it = numbers.begin(); it != numbers.end(); it++){ // end last element 
+        cout << *it << endl;
+    }
+
+
+
+return 0; 
+} 
