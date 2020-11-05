@@ -7,7 +7,6 @@
 using namespace std;
 
 void backwards(vector<string>& vect);
-
 void backwards(vector<string> &vect) {
 	for (auto &element : vect) {
 		reverse(element.begin(), element.end());
@@ -17,7 +16,7 @@ void backwards(vector<string> &vect) {
 
 
 int main() {
-	vector<string> word;
+    vector<string> word;
     string input;
     auto pos = 0;
     int i = 1;
@@ -25,9 +24,9 @@ int main() {
     cout << "Enter a new string" << endl;
     do {
         cout << i <<": ";
-		getline(cin, input);
+	getline(cin, input);
         i++;
-		pos = input.find("stop");
+	pos = input.find("stop");
 		if (pos == -1) {
 			word.push_back(input);
 		}
@@ -35,14 +34,14 @@ int main() {
 	} while (pos == -1);
 
 	cout << endl;
-    cout << "Befor backwards:" << endl;
+   	cout << "Befor backwards:" << endl;
 	for (auto elements : word) {
 		cout << elements << endl;
 	}
 
 	backwards(word);
 	cout << endl;
-    cout << "After backwards:" << endl;  
+        cout << "After backwards:" << endl;  
 	for (auto element : word) {
 		cout << element << endl;
 	}
