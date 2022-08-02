@@ -10,7 +10,7 @@ class MagicSquare {
         int sum = 0;
         bool isEqual = true;
         vector<int> total;
-        void check(vector<int>& total);
+        bool check(vector<int>& total);
 };
 
 void MagicSquare::userInput(int a, int b) {
@@ -28,7 +28,7 @@ void MagicSquare::userInput(int a, int b) {
     check(total);
 }
 
-void MagicSquare::check (vector<int>& total) {
+bool MagicSquare::check (vector<int>& total) {
     if(equal(total.begin()+ 1, total.end(), total.begin())) {
         isEqual = true;
     }
@@ -37,6 +37,8 @@ void MagicSquare::check (vector<int>& total) {
     }
 
     cout << boolalpha <<isEqual << "\n";
+
+    return isEqual;
 }
 
 
