@@ -9,7 +9,7 @@ class Password {
         vector<bool> checks{false, false, false, false, true};
     public:
         void checking(string password);
-        void lenght(string password);
+        void repeatedCharacters(string password);
         void result();
 };
 
@@ -32,10 +32,10 @@ void Password::checking(string password) {
             checks[3] = true;
         }
     }
-    return lenght(password);
+    return repeatedCharacters(password);
 }
 
-void Password::lenght(string password) {
+void Password::repeatedCharacters(string password) {
      for (int i = 0; i < password.size(); i++) {
         if ((password[i] == password[i + 1] && password[i + 1] == password[i + 2])) {
             checks[4] = false;
@@ -47,10 +47,10 @@ void Password::lenght(string password) {
 
 void Password::result() {
     if (all_of(checks.begin(), checks.end(), [](bool v) { return v; })) {
-        cout << "all are true";
+        cout << "All are true, your password is match" << "\n";
     }
     else {
-        cout << "Something is wrong";
+        cout << "Something is wrong. Check password instruction one more time" << "\n";
     }
 }
 
