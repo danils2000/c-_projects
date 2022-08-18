@@ -5,7 +5,6 @@ using namespace std;
 
 class Password {
     private:
-        int a = 0;
         vector<bool> checks{false, false, false, false, true};
     public:
         void checking(string password);
