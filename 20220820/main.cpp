@@ -14,11 +14,11 @@ class Ferris {
         void functionsCaller(vector<int>& numbers, int sum);
 };
 
-void Ferris::sorting(vector<int>& numbers) {
+inline void Ferris::sorting(vector<int>& numbers) {
     sort(numbers.begin(), numbers.end());
 }
 
-void Ferris::readValues(vector<int>& numbers) {
+inline void Ferris::readValues(vector<int>& numbers) {
     for (int i = 0; i < numbers.size(); i++) {
         cin >> weight;
         numbers[i] = weight;
