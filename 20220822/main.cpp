@@ -11,7 +11,6 @@ class Exponentiation {
         ui64 result = 0;
         void readValues(vector<pair<int, int>>& numbers);
         void showAnswers(vector<pair<int, int>>& numbers);
-        ui64 array[];
     public:
         void caller(vector<pair<int, int>>& numbers);
 };
