@@ -16,8 +16,7 @@ float mean(int* array, int n) {
 
 
 int main() {
-	int input;
-    	int num = 1;
+	int input = 0, num = 1;
 	int* numbers;
 
 	cout << "Enter how many numbers shoudl randomly generated: ";
