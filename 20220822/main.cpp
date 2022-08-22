@@ -3,6 +3,7 @@
 #include <math.h>
 #define module 1000000007
 #define ui64 uint64_t
+#define MAX 128
 using namespace std;
 
 class Exponentiation {
@@ -10,18 +11,23 @@ class Exponentiation {
         int number = 0, number2 = 0;
         ui64 result = 0;
         void readValues(vector<pair<int, int>>& numbers);
-        void showAnswers(vector<pair<int, int>>& numbers);
+        void calculation(vector<pair<int, int>>& numbers);
+        void showAnswers(int array[]);
+        int array[MAX] = {};
     public:
         void caller(vector<pair<int, int>>& numbers);
 };
 
-void Exponentiation::showAnswers(vector<pair<int, int>>& numbers){
-    for (int i = 0; i < numbers.size(); i++) {
-        cout << numbers[i].first << "^" << numbers[i].second << " = ";
+void Exponentiation::showAnswers(int array[]) {
+    for (int i = 0; i < sizeof(*array) - 1; i++) {
+        cout << array[i] << ", ";
+    }
+}
 
+void Exponentiation::calculation(vector<pair<int, int>>& numbers){
+    for (int i = 0; i < numbers.size(); i++) {
         result = pow(numbers[i].first, numbers[i].second);
-        result = result % module;
-        cout << result << "\n";
+        array[i] = result;
     }
 }
 
@@ -34,7 +40,8 @@ void Exponentiation::readValues(vector<pair<int, int>>& numbers) {
 
 inline void Exponentiation::caller(vector<pair<int, int>>& numbers) {
     readValues(numbers);
-    showAnswers(numbers);
+    calculation(numbers);
+    showAnswers(array);
 }
 
 
