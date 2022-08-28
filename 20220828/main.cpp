@@ -6,7 +6,7 @@ using namespace std;
 template<class T> 
 class countingDivisors {
     private:
-        int number = 0, amoutOfDivisors = 0;
+        T number = 0, amoutOfDivisors = 0;
         vector<T> answers;
         vector<T> givenNumbers;
         void readValues(T amoutOfNumbers);
