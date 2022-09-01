@@ -56,7 +56,7 @@ inline void StringMatching<T>::kmpAlgorithm() {
 
 template<class T>
 inline int StringMatching<T>::printAnswer(int answer) {
-    cout << "Output: " << "\n" << answer << "\n";
+    cout << "Output:" << "\n" << answer << "\n";
     return 0;
 }
 
