@@ -3,6 +3,7 @@ Create a function that creates a box based on dimension n.
 Examples
 makeBox(5) ➞ [
   "#####",
+  
   "#   #",
   "#   #",
   "#   #",
